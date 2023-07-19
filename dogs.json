@@ -1,0 +1,221 @@
+[
+  {
+    "breed": "Mixed Breed",
+    "size": "various",
+    "lifespan": "various",
+    "colours": "various",
+    "dogGroup": "various",
+    "exerciseDemands": "various",
+    "groomingNeeds": "various",
+    "image": "https://petkeen.com/wp-content/uploads/2022/08/Mixed-breed-dog-in-grass_Stephm2506_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Labrador Retriever",
+    "size": "Large",
+    "lifespan": "10-14 years",
+    "colours": "Black, Gold, Chocolate",
+    "dogGroup": "Gundog",
+    "exerciseDemands": "Moderate to High",
+    "groomingNeeds": "Moderate to High",
+    "image": "https://petkeen.com/wp-content/uploads/2022/08/Labrador-Retriever_Angel-Luciano_Unsplash.webp"
+  },
+
+  {
+    "breed": "Cockapoo",
+    "size": "Small",
+    "lifespan": "12-15 years",
+    "colours": "Black, Brown, Tan, White",
+    "dogGroup": "Designer",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2022/08/Labrador-Retriever_Angel-Luciano_Unsplash.webp"
+  },
+
+  {
+    "breed": "French Bulldog",
+    "size": "Small",
+    "lifespan": "11-14 years",
+    "colours": "White, Brindle, Fawn, Tan",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "Moderate",
+    "image": "https://petkeen.com/wp-content/uploads/2022/04/french-bulldog-on-th-grass-with-harness_yhelfmanShuterstock.webp"
+  },
+
+  {
+    "breed": "Cocker Spaniel",
+    "size": "Small",
+    "lifespan": "12-15 years",
+    "colours": "Black, Orange, Tan, Liver, Brown, White",
+    "dogGroup": "Sporting",
+    "exerciseDemands": "Moderate to High",
+    "groomingNeeds": "Moderate",
+    "image": "https://petkeen.com/wp-content/uploads/2022/05/english-cocker-spaniel-walking-outside_Katrina-S_Pixabay.webp"
+  },
+
+  {
+    "breed": "Dachshund",
+    "size": "Small",
+    "lifespan": "12-15 years",
+    "colours": "Black, Tan, Liver, Brown",
+    "dogGroup": "Hound",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "Moderate",
+    "image": "https://petkeen.com/wp-content/uploads/2022/07/miniature-dachshund_JeebyJeeby_Pixabay.webp"
+  },
+
+  {
+    "breed": "Staffordshire Bull Terrier",
+    "size": "Small to Medium",
+    "lifespan": "12-14 years",
+    "colours": "Black, White, Fawn, Brown, Blue, Red",
+    "dogGroup": "Terrier",
+    "exerciseDemands": "Moderate to High",
+    "groomingNeeds": "Easy",
+    "image": "https://petkeen.com/wp-content/uploads/2022/08/Staffordshire-Bull-Terrier_Mary-Swift_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Jack Russell Terrier",
+    "size": "Small to Medium",
+    "lifespan": "10-15 years",
+    "colours": "Brown, White, Black",
+    "dogGroup": "Terrier",
+    "exerciseDemands": "High",
+    "groomingNeeds": "Easy",
+    "image": "https://petkeen.com/wp-content/uploads/2021/05/jack-russell-terrier.webp"
+  },
+
+  {
+    "breed": "Border Collie",
+    "size": "Medium",
+    "lifespan": "12-15 years",
+    "colours": "Black, White, Blue, Brown",
+    "dogGroup": "Herding",
+    "exerciseDemands": "High",
+    "groomingNeeds": "Moderate to High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/10/female-border-collie-lying-on-grass_Elayne-Massaini-Shutterstock.webp"
+  },
+
+  {
+    "breed": "Chihuahua",
+    "size": "Small",
+    "lifespan": "10-18 years",
+    "colours": "White, Black, Fawn, Chocolate",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "Easy",
+    "image": "https://petkeen.com/wp-content/uploads/2022/06/Cute-purebred-Chihuahua-puppy-resting-on-green-meadow_Rafael-Guajardo_Pexels-e1654062041762.webp"
+  },
+
+  {
+    "breed": "German Shepherd",
+    "size": "Large",
+    "lifespan": "10-14 years",
+    "colours": "Black, Brown, Tan",
+    "dogGroup": "Herding",
+    "exerciseDemands": "High",
+    "groomingNeeds": "Moderate to High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/10/german-shepherd-head-tilt_Diego-Cervo_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Golden Retriever",
+    "size": "Medium",
+    "lifespan": "10-12 years",
+    "colours": "Gold",
+    "dogGroup": "Sporting",
+    "exerciseDemands": "High",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2022/02/Golden-Labrador-Retriever-in-Glass_Burin-P_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Shih Tzu",
+    "size": "Small",
+    "lifespan": "10-16 years",
+    "colours": "Brown, Red, Black, White",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Easy",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/12/shih-tzu-dog-walks-in-the-garden_Yarnawee-Nipatarangkoon_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Pug",
+    "size": "Small",
+    "lifespan": "12-15 years",
+    "colours": "Black, Tan, Fawn",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "Low to Moderate",
+    "image": "https://petkeen.com/wp-content/uploads/2023/05/fawn-pug-dog-standing-outdoors_Poltavets-Anastasiia_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Yorkshire Terrier",
+    "size": "Small",
+    "lifespan": "12-15 years",
+    "colours": "Black, Blue, Tan, Gold",
+    "dogGroup": "Terrier",
+    "exerciseDemands": "Moderate to High",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/06/Biewer-Yorkshire-terrier_murPhotographer_shutterstock.webp"
+  },
+
+  {
+    "breed": "Cavalier King Charles Spaniel",
+    "size": "Small",
+    "lifespan": "9-15 years",
+    "colours": "Black, Brown, Tan, White",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Moderate",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/05/Cavalier-King-Charles-Spaniel_BIGANDT.COM_Shutterstock.webp"
+  },
+
+  {
+    "breed": "Labradoodle",
+    "size": "Medium",
+    "lifespan": "12-14 years",
+    "colours": "Gold, Red, Black, Chocolate, Cream",
+    "dogGroup": "Hybrid",
+    "exerciseDemands": "High",
+    "groomingNeeds": "Moderate to High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/04/labradoodle_Josh-Borup_Pixabay.webp"
+  },
+
+  {
+    "breed": "Beagle",
+    "size": "Small to Medium",
+    "lifespan": "10-15 years",
+    "colours": "Black, Brown, White",
+    "dogGroup": "Hound",
+    "exerciseDemands": "High",
+    "groomingNeeds": "Easy to Moderate",
+    "image": "https://petkeen.com/wp-content/uploads/2022/08/Beagle-on-a-walk_Alexey-Androsov_Shutterstock.webp"
+  },
+
+  {
+    "breed": "English Springer Spaniel",
+    "size": "Medium",
+    "lifespan": "9-15 years",
+    "colours": "Liver, White, Brown, Black, Lemon",
+    "dogGroup": "Sporting",
+    "exerciseDemands": "High",
+    "groomingNeeds": "High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/07/english-springer-spaniel-standing-on-grass.webp"
+  },
+
+  {
+    "breed": "Pomeranian",
+    "size": "Small",
+    "lifespan": "12-16 years",
+    "colours": "White, Black, Blue, Red",
+    "dogGroup": "Companion",
+    "exerciseDemands": "Low to Moderate",
+    "groomingNeeds": "Moderate to High",
+    "image": "https://petkeen.com/wp-content/uploads/2021/11/pomeranian_Kongrat_Shutterstock.webp"
+  }
+]
