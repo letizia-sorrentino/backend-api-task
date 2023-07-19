@@ -22,6 +22,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //routes
+app.use("/get", require("./routes/get"));
+
 
 //boilerplate to start the server
 const port = process.env.PORT || 6001;
