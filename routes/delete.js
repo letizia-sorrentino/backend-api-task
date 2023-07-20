@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.delete("/breeds/:id", (req, res) => {
+    console.log("router ran - DELETE");
     const id = Number(req.params.id);
 
     //check that id is a number

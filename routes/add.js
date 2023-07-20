@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.post("/breeds", (req, res) => {
+    console.log("router ran - ADD");
     const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds } = req.body;
 
     //check content

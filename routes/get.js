@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/breeds", (req, res) => {
-    console.log("router ran");
+    console.log("router ran - GET");
     res.send({ status: 1, breeds: req.dogs });
 });
 
