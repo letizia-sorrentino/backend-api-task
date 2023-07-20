@@ -7,7 +7,6 @@ router.get("/breeds", (req, res) => {
 });
 
 router.get("/breeds/:id", (req, res) => {
-
     const id = Number(req.params.id);
 
     //check the id is a number

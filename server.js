@@ -25,6 +25,7 @@ app.use(express.json());
 
 //routes
 app.use("/get", require("./routes/get"));
+app.use("/delete", require("./routes/delete"));
 
 
 //boilerplate to start the server
