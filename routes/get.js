@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/breed", (req, res) => {
+router.get("/breeds", (req, res) => {
     console.log("router ran");
-    res.send({ status: 1, breed: req.dogs });
+    res.send({ status: 1, breeds: req.dogs });
 });
 
-router.get("/breed/:id", (req, res) => {
+router.get("/breeds/:id", (req, res) => {
 
     const id = Number(req.params.id);
 

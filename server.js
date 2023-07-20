@@ -8,6 +8,7 @@ dogs.forEach((item, index) => {
     item.id = index + 1;
 })
 
+//middelware function
 app.use((req, res, next) => {
     console.log("new request");
     next();
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 //make data available in all program
 app.use((req, res, next) => {
     req.dogs = dogs;
+    next();
 });
 
 //convert the body to json
