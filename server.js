@@ -13,8 +13,8 @@ app.use(express.json());
 
 //routes
 app.use("/get", require("./routes/get"));
-// app.use("/delete", require("./routes/delete"));
-// app.use("/add", require("./routes/add"));
+app.use("/delete", require("./routes/delete"));
+app.use("/add", require("./routes/add"));
 // app.use("/update", require("./routes/update"));
 
 //boilerplate to start the server
