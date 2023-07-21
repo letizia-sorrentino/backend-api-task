@@ -17,7 +17,7 @@ router.patch("/breed/:id", (req, res) => {
         return item.id === id;
     });
 
-    //check that user exists
+    //check that breed exists
     if (indexOf === -1) {
         res.send({ status: 0, reason: "Id not found" });
         return;

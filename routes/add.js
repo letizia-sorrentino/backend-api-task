@@ -1,7 +1,9 @@
 const express = require("express");
+const { genRandomString } = require("../utils/math");
 const router = express.Router();
+import { genRandomString } from "../utils/math";
 
-router.post("/breeds", (req, res) => {
+router.post("/new-breed", (req, res) => {
     console.log("router ran - ADD");
     const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds } = req.body;
 
@@ -39,13 +41,13 @@ router.post("/breeds", (req, res) => {
     }
 
     req.dogs.push({
-        id: Math.round(Math.random() * 1000000),
+        id: genRandomString(16), //id: Math.round(Math.random() * 1000000),
         breed,
         size,
         lifespan,
-        colours, 
-        dogGroup, 
-        exerciseDemands, 
+        colours,
+        dogGroup,
+        exerciseDemands,
         groomingNeeds
     });
 
