@@ -1,8 +1,9 @@
 const express = require("express");
 const { genRandomString } = require("../utils/math");
 const router = express.Router();
+const asyncMySQL = require("../mysql/connection");
 
-router.post("/new-breed", (req, res) => {
+router.post("/new-breed", async (req, res) => {
     console.log("router ran - ADD");
     const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds } = req.body;
 
@@ -14,7 +15,7 @@ router.post("/new-breed", (req, res) => {
         !colours ||
         !dogGroup ||
         !exerciseDemands ||
-        !groomingNeeds,
+        !groomingNeeds ||
 
         typeof breed !== "string" ||
         typeof size !== "string" ||
@@ -29,28 +30,20 @@ router.post("/new-breed", (req, res) => {
         return;
     }
 
-    //check for duplicates
-    const indexOf = req.dogs.findIndex((item) => {
-        return item.breed === breed;
-    });
+    //insert new breed
+    try {
+        await asyncMySQL(`
+    INSERT INTO dogsBreeds
+    (breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds)
+    VALUES
+    ("${breed}", "${size}", "${lifespan}", "${colours}","${dogGroup}","${exerciseDemands}","${groomingNeeds}")
+    `)
+        res.send({ status: 1 });
 
-    if (indexOf > -1) {
+    } catch (error) {
         res.send({ status: 0, reason: "duplicate entry" });
-        return;
     }
 
-    req.dogs.push({
-        id: genRandomString(16), //id: Math.round(Math.random() * 1000000),
-        breed,
-        size,
-        lifespan,
-        colours,
-        dogGroup,
-        exerciseDemands,
-        groomingNeeds
-    });
-
-    res.send({ status: 1 })
 
 });
 
