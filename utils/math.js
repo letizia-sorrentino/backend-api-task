@@ -1,15 +1,15 @@
-const genRandomString = (len =16) => {
+const genRandomString = (len = 16) => {
 
-let res="";
-const charSelection = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-";
-const charSelectionLen = charSelection.length;
+    let res = "";
+    const charSelection = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-";
+    const charSelectionLen = charSelection.length;
 
-for(let i=0; i <len; i++) {
-    res += charSelection.charAt(Mathfloor(Math.random() * charSelectionLen))
-}
+    for (let i = 0; i < len; i++) {
+        res += charSelection.charAt(Mathfloor(Math.random() * charSelectionLen))
+    }
 
-return res;
+    return res;
 
 };
 
-module.exports = {genRandomString};
+module.exports = { genRandomString };

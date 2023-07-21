@@ -1,7 +1,6 @@
 const express = require("express");
 const { genRandomString } = require("../utils/math");
 const router = express.Router();
-import { genRandomString } from "../utils/math";
 
 router.post("/new-breed", (req, res) => {
     console.log("router ran - ADD");
