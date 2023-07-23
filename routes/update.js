@@ -1,60 +1,60 @@
 const express = require("express");
 const router = express.Router();
+const asyncMySQL = require("../mysql/connection");
 
-router.patch("/breed/:id", (req, res) => {
+
+router.patch("/breed/:id", async (req, res) => {
     console.log("router ran - UPDATE");
-    const allowableSizes = ["Small", "Small to Medium", "Medium", "Large", "Various"];
 
     const id = Number(req.params.id);
 
-    // check that id is a number
-    if (Number.isNaN(id)) {
-        res.send({ status: 0, reason: "Invalid id" });
-        return;
-    }
-
-    const indexOf = req.dogs.findIndex((item) => {
-        return item.id === id;
-    });
-
-    //check that breed exists
-    if (indexOf === -1) {
-        res.send({ status: 0, reason: "Id not found" });
-        return;
-    }
-
     const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds } = req.body;
 
+    try {
+        //for security we have repetition
+        if (breed && typeof breed === "string") {
+            await asyncMySQL(`UPDATE breed SET breed ="${breed}" WHERE id LIKE "${id}"`);
 
-    //for security we have repetition
-    if (breed && typeof breed === "string") {
-        req.dogs[indexOf].breed = breed;
+        }
+
+        if (size && typeof size === "string") {
+            await asyncMySQL(`UPDATE size SET size ="${size}" WHERE id LIKE "${id}"`);
+
+        }
+
+
+        if (lifespan && typeof lifespan === "string") {
+            await asyncMySQL(`UPDATE lifespan SET lifespan ="${lifespan}" WHERE id LIKE "${id}"`);
+
+        }
+
+        if (colours && typeof colours === "string") {
+            await asyncMySQL(`UPDATE colours SET colours ="${colours}" WHERE id LIKE "${id}"`);
+
+        }
+
+        if (dogGroup && typeof dogGroup === "string") {
+            await asyncMySQL(`UPDATE dogGroup SET dogGroup ="${dogGroup}" WHERE id LIKE "${id}"`);
+
+        }
+
+        if (exerciseDemands && typeof exerciseDemands === "string") {
+            await asyncMySQL(`UPDATE exerciseDemands SET exerciseDemands ="${exerciseDemands}" WHERE id LIKE "${id}"`);
+
+        }
+
+        if (groomingNeeds && typeof groomingNeeds === "string") {
+            await asyncMySQL(`UPDATE groomingNeeds SET groomingNeeds ="${groomingNeeds}" WHERE id LIKE "${id}"`);
+
+        }
+
+    } catch (error) {
+        res.send({ status: 0, reason: error.sqlMessage });
+
     }
 
-    if (lifespan && typeof lifespan === "string") {
-        req.dogs[indexOf].lifespan = lifespan;
-    }
-
-    if (colours && typeof colours === "string") {
-        req.dogs[indexOf].colours = colours;
-    }
-
-    if (dogGroup && typeof dogGroup === "string") {
-        req.dogs[indexOf].dogGroup = dogGroup;
-    }
-
-    if (exerciseDemands && typeof exerciseDemands === "string") {
-        req.dogs[indexOf].exerciseDemands = exerciseDemands;
-    }
-
-    if (groomingNeeds && typeof groomingNeeds === "string") {
-        req.dogs[indexOf].groomingNeeds = groomingNeeds;
-    }
 
 
-    if (allowableSizes.includes(size)) {
-        req.dogs[indexOf].size = size;
-    }
     res.send({ status: 1 });
 
 });

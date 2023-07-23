@@ -1,5 +1,4 @@
 const express = require("express");
-const { genRandomString } = require("../utils/math");
 const router = express.Router();
 const asyncMySQL = require("../mysql/connection");
 

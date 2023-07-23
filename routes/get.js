@@ -5,7 +5,7 @@ const asyncMySQL = require("../mysql/connection");
 router.get("/breeds", async (req, res) => {
     console.log("router ran - GET");
     const results = await asyncMySQL(`
-        SELECT breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
+        SELECT id, breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
             FROM dogsBreeds;`);
     res.send({ status: 1, results });
 });
@@ -21,7 +21,7 @@ router.get("/breeds/:id", async (req, res) => {
 
     //ask SQL for data
     const results = await asyncMySQL(`
-        SELECT breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
+        SELECT id, breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
             FROM dogsBreeds 
             WHERE id LIKE ${id};`);
 
