@@ -7,15 +7,11 @@ app.use((req, res, next) => {
     next();
 });
 
-
 //convert the body to json
 app.use(express.json());
 
 //routes
-app.use("/get", require("./routes/get"));
-app.use("/delete", require("./routes/delete"));
-app.use("/add", require("./routes/add"));
-app.use("/update", require("./routes/update"));
+app.use("/breed", require("./routes/breed"));
 app.use("/user", require("./routes/user"));
 
 //boilerplate to start the server
