@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express(); 
+const app = express();
 
 //middelware function
 app.use((req, res, next) => {
@@ -22,3 +22,5 @@ const port = process.env.PORT || 6001;
 app.listen(port, () => {
     console.log(`the server is running on ${port}`);
 });
+
+
