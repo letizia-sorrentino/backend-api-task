@@ -13,16 +13,18 @@ router.get("/:id", async (req, res) => {
     }
 
     //ask SQL for data
-    const results = await asyncMySQL(`
+    const breed = await asyncMySQL(`
         SELECT id, breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
             FROM dogsBreeds 
             WHERE id LIKE ${id};`);
+    console.log(breed);
 
 
-    if (!results.length > 0) {
+    if (breed.length > 0) {
         res.send({ status: 1, breed });
-
+        return;
     }
+
     res.send({ status: 0, reason: "id not found" });
 
 });
@@ -48,7 +50,7 @@ router.delete("/:id", async (req, res) => {
 //adding a new breed
 router.post("/", async (req, res) => {
     console.log("router ran - ADD");
-    const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, userId} = req.body;
+    const { breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, userId } = req.body;
 
     //check content
     if (
@@ -75,7 +77,9 @@ router.post("/", async (req, res) => {
 
     //insert new breed
     try {
-        await asyncMySQL(`
+
+        await asyncMySQL(
+            `
     INSERT INTO dogsBreeds
     (breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, user_id)
     VALUES
@@ -85,8 +89,9 @@ router.post("/", async (req, res) => {
     "${colours}",
     "${dogGroup}",
     "${exerciseDemands}",
-    "${groomingNeeds}"
-    "${userId}")`)
+    "${groomingNeeds}",
+    "${userId}")`
+        )
         res.send({ status: 1 });
 
     } catch (error) {
@@ -108,49 +113,46 @@ router.patch("/:id", async (req, res) => {
     try {
         //for security we have repetition
         if (breed && typeof breed === "string") {
-            await asyncMySQL(`UPDATE breed SET breed ="${breed}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET breed ="${breed}" WHERE id LIKE "${id}"`);
 
         }
 
         if (size && typeof size === "string") {
-            await asyncMySQL(`UPDATE size SET size ="${size}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET size ="${size}" WHERE id LIKE "${id}"`);
 
         }
 
 
         if (lifespan && typeof lifespan === "string") {
-            await asyncMySQL(`UPDATE lifespan SET lifespan ="${lifespan}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET lifespan ="${lifespan}" WHERE id LIKE "${id}"`);
 
         }
 
         if (colours && typeof colours === "string") {
-            await asyncMySQL(`UPDATE colours SET colours ="${colours}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET colours ="${colours}" WHERE id LIKE "${id}"`);
 
         }
 
         if (dogGroup && typeof dogGroup === "string") {
-            await asyncMySQL(`UPDATE dogGroup SET dogGroup ="${dogGroup}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET dogGroup ="${dogGroup}" WHERE id LIKE "${id}"`);
 
         }
 
         if (exerciseDemands && typeof exerciseDemands === "string") {
-            await asyncMySQL(`UPDATE exerciseDemands SET exerciseDemands ="${exerciseDemands}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET exerciseDemands ="${exerciseDemands}" WHERE id LIKE "${id}"`);
 
         }
 
         if (groomingNeeds && typeof groomingNeeds === "string") {
-            await asyncMySQL(`UPDATE groomingNeeds SET groomingNeeds ="${groomingNeeds}" WHERE id LIKE "${id}"`);
+            await asyncMySQL(`UPDATE dogsBreeds SET groomingNeeds ="${groomingNeeds}" WHERE id LIKE "${id}"`);
 
         }
-
+        res.send({ status: 1 });
     } catch (error) {
         res.send({ status: 0, reason: error.sqlMessage });
 
     }
 
-
-
-    res.send({ status: 1 });
 
 });
 
