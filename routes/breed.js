@@ -2,7 +2,19 @@ const express = require("express");
 const router = express.Router();
 const asyncMySQL = require("../mysql/connection");
 
+
 //get data
+router.get("/", async (req, res) => {
+    console.log("router ran - GET");
+    const results = await asyncMySQL(`
+        SELECT id, breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
+            FROM dogsBreeds;`);
+    res.send({ status: 1, results });
+});
+
+
+
+//get data by id 
 router.get("/:id", async (req, res) => {
     const id = Number(req.params.id);
 
@@ -17,7 +29,7 @@ router.get("/:id", async (req, res) => {
         SELECT id, breed, size, lifespan, colours, dogGroup, exerciseDemands, groomingNeeds, image
             FROM dogsBreeds 
             WHERE id LIKE ${id};`);
-    console.log(breed);
+    //console.log(breed);
 
 
     if (breed.length > 0) {
