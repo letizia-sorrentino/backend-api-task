@@ -12,8 +12,6 @@ router.get("/", async (req, res) => {
     res.send({ status: 1, results });
 });
 
-
-
 //get data by id 
 router.get("/:id", async (req, res) => {
     const id = Number(req.params.id);
